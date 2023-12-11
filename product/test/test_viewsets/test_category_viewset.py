@@ -14,7 +14,7 @@ class CategoryViewSet(APITestCase):
     client = APIClient()
 
     def setUp(self):
-        self.category = CategoryFactory(title= 'books')
+        self.category = CategoryFactory(title='books')
 
         def test_get_all_category(self):
             response = self.Client.get(
@@ -24,7 +24,7 @@ class CategoryViewSet(APITestCase):
             self.assertEqual(response.staus_code, status.HTTP_200_OK)
             category_data = json.loads(response.content)
 
-            self.assertEqual(category_data[0]['title'], self.category.title)
+            self.assertEqual(category_data['results'][0]['products'][0]['title'], self.category.title)
 
             def test_create_category(self):
                 
