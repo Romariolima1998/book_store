@@ -1,0 +1,7 @@
+factory-boy==3.3.0
+Django>=3.2,<4.0
+pytest==7.4.3
+djangorestframework==3.14.0
+django-extensions==3.2.3
+django-test==0.4030
+django-debug-toolbar==4.2.0
