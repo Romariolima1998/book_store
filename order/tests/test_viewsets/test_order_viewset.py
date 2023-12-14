@@ -1,5 +1,6 @@
 import json
 
+from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 from rest_framework.authtoken.models import Token
@@ -39,6 +40,7 @@ class TestOrderViewSet(APITestCase):
         # self.assertEqual(order_data['results'][0]['product'][0]['category'][0]['title'], self.product.category.title)
 
         def test_create_order(self):
+            
             token = Token.objects.get(user__username=self.user.username)
             self.client.credentials(HTTP_AUTHORIZATION='token'+token.key)
             user = UserFactory()
