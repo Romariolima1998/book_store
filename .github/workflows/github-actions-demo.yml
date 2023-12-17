@@ -9,5 +9,5 @@ jobs:
         uses: actions/checkout@v2
       - name: List files in the repository
         run: |
-          ls${{ github.workspace }}
+          ls ${GITHUB_WORKSPACE}
       - run: echo "status ${{ job.status }}."
