@@ -21,12 +21,12 @@ jobs:
         python -m pip install -r requirements.txt
 
     - name: Set up PostgreSQL
-        uses: postgresql/setup-postgres@v2
-        with:
-          postgresql-version: '12'
-          postgresql-database: bookstore_dev_db
-          postgresql-username: bookstore_dev
-          postgresql-password: bookstore_dev
+      uses: postgresql/setup-postgres@v2
+      with:
+        postgresql-version: '12'
+        postgresql-database: bookstore_dev_db
+        postgresql-username: bookstore_dev
+        postgresql-password: bookstore_dev
 
     - name: Run tests
       run: python manage.py test
