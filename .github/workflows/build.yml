@@ -20,12 +20,5 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements.txt
 
-    - name: Set up PostgreSQL
-      uses: docker://postgres:12
-      env:
-        POSTGRES_DB: bookstore_dev_db
-        POSTGRES_USER: bookstore_dev
-        POSTGRES_PASSWORD: bookstore_dev
-
     - name: Run tests
       run: python manage.py test
