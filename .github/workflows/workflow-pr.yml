@@ -5,9 +5,11 @@ on: [pull_request]
 jobs:
   qa:
     name: Quality check
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -16,8 +18,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -U pip
-          pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
 
       - name: Test
         run: |
