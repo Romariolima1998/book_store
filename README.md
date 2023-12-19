@@ -45,6 +45,6 @@ https://github.com/Romariolima1998/book_store.git
    ```shell
    docker-compose exec web python manage.py test
    ```
-
+c
 
 
