@@ -15,7 +15,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -153,9 +153,9 @@ INTERNAL_IPS = [
 
 SECRET_KEY = os.environ.get('SECRET_KEY',' foo')
 
-DEBUG = int(os.environ.get('DEBUG', default=0))
+# DEBUG = int(os.environ.get('DEBUG', default=0))
 
 
 ALLOWED_HOSTS = [
-    'localhost', '127.0.0.1', 'api-bookstore-d8b4089631e6.herokuapp.com/'
+    'localhost', '127.0.0.1', 'api-bookstore-d8b4089631e6.herokuapp.com'
 ]
